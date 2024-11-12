@@ -35,7 +35,7 @@ export class Player {
 
   gainExperience(amount: number): void {
     this.experience += amount;
-    if (this.experience >= this.level * 20) {
+    while (this.experience >= this.level * 20) {
       this.levelUp();
     }
   }

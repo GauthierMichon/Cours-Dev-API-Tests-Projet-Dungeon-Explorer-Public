@@ -94,7 +94,7 @@ export class DungeonExplorer {
       const monsterDamage =
         Math.floor(monsterAttack - this.player.defense + Math.random() * 5) + 1;
 
-      this.player.health -= monsterDamage;
+      this.player.health -= monsterDamage < 0 ? 0 : monsterDamage;
       this.player.health = Math.max(0, this.player.health);
       console.log(
         `Le monstre vous attaque et vous inflige ${monsterDamage} dégâts. Santé restante : ${this.player.health}`
@@ -145,7 +145,7 @@ export class DungeonExplorer {
       const bossDamage =
         Math.floor(bossAttack - this.player.defense + Math.random() * 5) + 8;
 
-      this.player.health -= bossDamage;
+      this.player.health -= bossDamage < 0 ? 0 : bossDamage;
       this.player.health = Math.max(0, this.player.health);
       console.log(
         `Le BOSS vous attaque et vous inflige ${bossDamage} dégâts. Santé restante : ${this.player.health}`
