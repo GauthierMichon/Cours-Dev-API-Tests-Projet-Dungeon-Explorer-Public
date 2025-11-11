@@ -91,8 +91,11 @@ export class DungeonExplorer {
           break;
       }
 
-      const monsterDamage =
-        Math.floor(monsterAttack - this.player.defense + Math.random() * 5) + 1;
+      let monsterDamage = Math.floor(
+        monsterAttack - this.player.defense + Math.random() * 5
+      );
+
+      if (monsterDamage <= 0) monsterDamage = 1;
 
       this.player.health -= monsterDamage < 0 ? 0 : monsterDamage;
       this.player.health = Math.max(0, this.player.health);
