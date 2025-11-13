@@ -1,4 +1,4 @@
-# BlackJack - Jeu en CLI
+# Dungeon Explorer - Jeu en CLI
 
 ## Description
 
